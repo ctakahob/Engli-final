@@ -1,0 +1,21 @@
+tr
+  td 
+    br = example.example
+  td 
+    br = example.user.username
+  td 
+    br = formatted_time(example.created_at)
+  - if show_example_delete_link? example
+    td 
+      br = link_to 'delete', phrase_example_path(example.phrase, example), data: {method: :delete , confirm: 'Are you sure?' } ,class: ["link-danger"]
+  - else
+    td 
+      br = link_to "view profile", user_path(example.user), class: ["link-warning"]
+  td
+      = link_to vote_phrase_example_path(example.phrase, example, vote: 'up'), method: :post,id: ["vote_up"] do
+        div
+          i.bi.bi-hand-thumbs-up.link-info
+      = example.get_likes.size - example.get_dislikes.size
+      = link_to vote_phrase_example_path(example.phrase, example, vote: 'down'), method: :post, id: ["vote_down"] do
+        div
+          i.bi.bi-hand-thumbs-down.link-danger

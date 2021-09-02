@@ -1,0 +1,29 @@
+.card.w-100
+  br
+  .card-title.ms-5.text-start
+      p Phrase: <b>#{@phrase.phrase}</b>, Translation: <b>#{@phrase.translation}</b>, Category: <b>#{@phrase.category}</b>
+      p Created: <b>#{formatted_time(@phrase.created_at)}</b>, Author: <b>#{@phrase.user.username}</b>
+
+  br
+  h3.text-center Examples:  
+  .container.text-center
+    = form_for @example,style: ['width:100%'], url: phrase_examples_path(@phrase) do |f|
+      .form-group.w-100
+        = f.label :example
+        br
+        = f.text_field :example, class:['form-control'], style: ['width:100%']
+        = f.hidden_field :user_id
+        = f.submit 'Create example', class:['btn btn-primary'], style: ['width:40%']
+    .d-flex.justify-content-center.my-2
+      = will_paginate @examples, previous_label: '&laquo;', next_label: '&raquo;', class:"flickr_pagination"
+  table.table
+    tr
+      th Example
+      th Author
+      th Created At
+      th Action
+      th Votes
+
+    - @examples.each do |example|
+      = render example
+

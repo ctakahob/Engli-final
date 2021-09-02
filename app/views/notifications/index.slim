@@ -1,0 +1,7 @@
+h5 #{current_user.username} Notifications
+.text-center
+  = will_paginate @notifications, previous_label: '&laquo;', next_label: '&raquo;', class:"flickr_pagination"
+  - if @notifications.blank?
+    i.bi.bi-x-octagon.link-success   you have no notifications
+  - else 
+    = render 'notifications/activity'

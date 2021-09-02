@@ -1,0 +1,25 @@
+- @notifications.each do |notification|
+  .card.d-flex.justify-content-center.align-items-center
+    = link_to notification_path(notification), data: {method: :delete }, style: ["padding-left:90%"], id: ["delete_notification"]
+      i.bi.bi-x-lg.link-danger
+    p
+      - if notification.owner.nil?
+        | User was been deleted
+      - else 
+          = link_to notification.owner.username , user_path(notification.owner)
+      | :  
+      = notification.key
+      
+    
+    p
+      = notification.trackable_type
+      | :  
+      - if !notification.trackable.nil?
+        - if notification.trackable_type == 'Example'
+          = link_to notification.trackable.example, phrase_path(notification.trackable.phrase)
+        - else
+          = link_to notification.trackable.phrase, phrase_path(notification.trackable)
+      - else
+        | example/phrase deleted
+    p = formatted_time(notification.created_at)
+    

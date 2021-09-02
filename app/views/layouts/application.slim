@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title My App
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+
+  body
+    = render "phrases/navbar"   
+    .row.d-flex.flex-column.justify-content-center.align-items-center.m-0.w-100 
+        .d-flex.flex-column.justify-content-center.align-items-center.w-50      
+          - flash.each do |key, value|
+            div class="alert alert__#{key} "
+              = value
+          = yield       

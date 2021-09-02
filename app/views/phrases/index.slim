@@ -1,0 +1,28 @@
+div.text-center
+  h3 Listting phrases
+- if @phrases.blank?
+  nil
+- else  
+  = link_to "New phrase", new_phrase_path, class: "btn btn-primary w-50"
+  br
+  .d-flex.justify-content-center.my-2
+     = will_paginate @phrases, previous_label: '&laquo;', next_label: '&raquo;', class:"flickr_pagination"
+  
+
+- if @phrases.blank?
+    p no phrases created, add a new phrase? 
+    = link_to "New phrase", new_phrase_path, class: "btn btn-primary w-50"
+
+- else       
+  table.table
+    tr
+      th Id phrase
+      th Phrase
+      th Transilition
+      th Category
+      th Autor  
+      th Votes
+    - @phrases.each do |phrase|
+      = render phrase
+  
+

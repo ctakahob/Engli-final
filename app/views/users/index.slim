@@ -1,0 +1,22 @@
+.text-center
+  h3 List of users
+  = will_paginate @users, previous_label: '&laquo;', next_label: '&raquo;', class:"flickr_pagination"
+  table.table
+    tr
+      th Id  
+
+      th Email   
+
+      th Created At 
+
+      th Updated 
+
+      th Username
+
+      th Carma
+    - @users.each do |user|      
+      = render user
+
+    
+    
+

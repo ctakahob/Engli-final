@@ -1,0 +1,34 @@
+.text-center
+  h5
+    | Username: 
+    = @user.username
+    br
+    | Email:
+    = @user.email
+
+- if @phrases.blank?
+  -if @user == current_user
+    td
+    p you don't have phrase, create? 
+    = link_to "New phrase", new_phrase_path, class: "btn btn-primary w-50"
+  - else
+    p user don't have phrases
+- else            
+  table.table
+    tr
+      th
+        | Id
+      th
+        | Phrase
+      th
+        | Translation
+      th
+        | Category
+        
+      th
+        | Actions
+      
+      th 
+        | Votes
+      - @phrases.each do |phrase|
+        = render phrase, author: false, render_in_phrase: false

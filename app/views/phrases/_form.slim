@@ -1,0 +1,32 @@
+.container.text-center
+  = form_with model: @phrase do |f|
+    - if @phrase.errors.any?
+      #error_explantion
+      .text-center.bg-warning.p-2.text-dark.bg-opacity-25
+        h3 
+          = pluralize(@phrase.errors.count, "error")
+          | prohibited this phrase from being saved:
+        p
+          - @phrase.errors.full_messages.each do |message|
+              p style="list-style: none"
+                 = message
+
+    .form-group
+      = f.label :phrase
+      = f.text_field :phrase, class: 'form-control'
+    .form-group
+      = f.label :translation
+      = f.text_field :translation, class: 'form-control'
+    .form-group
+      = f.label :category
+      = f.select :category, Phrase.categories.keys ,{},  class: "form-control"
+    - if @phrase.id.nil?
+      = f.fields_for :examples do |e|
+        .form-group
+          = e.label :example
+          = e.text_field :example, :class => 'form-control'
+          = e.hidden_field :user_id
+    .actions
+      = f.submit 'Submit', class: 'btn btn-primary' , style: ['width:50%']
+  
+  
