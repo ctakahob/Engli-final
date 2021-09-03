@@ -98,6 +98,9 @@ body {
   #navbar {
     text-align: center;
   }
+  #phrase_td {
+    display: none;
+  }
 }
 @media all and (max-width: 500px) {
   #user_td {

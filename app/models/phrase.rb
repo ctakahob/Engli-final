@@ -16,8 +16,8 @@ class Phrase < ApplicationRecord
   belongs_to :user
   validates :phrase, :translation, presence: true
   validates :phrase, :translation, uniqueness: true
-  validates :phrase, :translation, format: { with: /\A[a-zA-Z',,,",.]+\z/,
-                                             message: "Only letters and symbols ' , allowed" }
+  validates :phrase, :translation, format: { with: /[a-zA-Zа-яА-Я]/,
+                                             message: 'Only letters allowed' }
   validates :category, inclusion: { in: %w[Actions Time Productivity Apologies Common],
                                     message: '%{value} is not a valid categoty' }
   enum category: { Actions: 0, Time: 1, Productivity: 2, Apologies: 3, Common: 4 }
