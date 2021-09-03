@@ -11,5 +11,5 @@ class Example < ApplicationRecord
   belongs_to :user
   belongs_to :phrase
   validates :example, presence: true
-  validates_uniqueness_of :example
+  validates_uniqueness_of :example, scope: :phrase_id, message: 'has already been used!'
 end

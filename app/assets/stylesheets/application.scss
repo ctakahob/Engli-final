@@ -70,3 +70,37 @@ body {
     margin-left: 16px;
   }
 }
+
+#br_top {
+  display: none;
+}
+
+#log_out {
+  float: right;
+}
+
+@media all and (max-width: 1000px) {
+  #log_out {
+    float: none;
+  }
+}
+
+@media all and (max-width: 785px) {
+  #example_td {
+    display: none;
+  }
+}
+
+@media all and (max-width: 600px) {
+  #br_top {
+    display: block;
+  }
+  #navbar {
+    text-align: center;
+  }
+}
+@media all and (max-width: 500px) {
+  #user_td {
+    display: none;
+  }
+}

@@ -1,9 +1,10 @@
 header.navbar-dark.bg-primary.w-100.d-flex.sticky-top.m-0.p-0 
-  ul.m-0.ps-2.pe-2.my-1.w-100     
+  ul.m-0.ps-2.pe-2.my-1.w-100 id="navbar"     
     -if signed_in?
       = link_to "Home",root_path, class: "navbar-brand "                 
       = link_to "Users", users_path , class: "navbar-brand"
       = link_to "View Profile", user_path(current_user) , class: "navbar-brand"
+      br id="br_top"
       = link_to "Edit Profile", edit_user_registration_path , class: "navbar-brand"
       - if current_user.has_new_notifications?
           = link_to read_all_notifications_path, method: "put", id: "new_notifications"
@@ -14,7 +15,7 @@ header.navbar-dark.bg-primary.w-100.d-flex.sticky-top.m-0.p-0
                 | &nbsp; new notifications
       -else
         = link_to "Notifications", notifications_path, class:["navbar-brand"]
-      = link_to "Sign Out", destroy_user_session_path, method: "delete" , class: "navbar-brand", style:["float: right"]
+      = link_to "Sign Out", destroy_user_session_path, method: "delete" , class: "navbar-brand", id:["log_out"]
     -else
       = link_to "Sign In", new_user_session_path , class: "navbar-brand" 
       = link_to "Sign Up", new_user_registration_path , class: "navbar-brand"

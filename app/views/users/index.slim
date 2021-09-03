@@ -1,9 +1,11 @@
 .text-center
   h3 List of users
+  br
   = will_paginate @users, previous_label: '&laquo;', next_label: '&raquo;', class:"flickr_pagination"
   table.table
     tr
-      th Id  
+      th id="user_td"
+        | Id  
 
       th Email   
 

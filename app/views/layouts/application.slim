@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title My App
+    title Listting phrases
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
@@ -14,4 +14,5 @@ html
           - flash.each do |key, value|
             div class="alert alert__#{key} "
               = value
+          br
           = yield       
