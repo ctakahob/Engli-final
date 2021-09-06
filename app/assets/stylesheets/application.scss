@@ -89,6 +89,15 @@ body {
   #example_td {
     display: none;
   }
+  #phrase_td {
+    display: none;
+  }
+  #user_td {
+    display: none;
+  }
+  #main_container {
+    width: 100% !important;
+  }
 }
 
 @media all and (max-width: 600px) {
@@ -97,13 +106,5 @@ body {
   }
   #navbar {
     text-align: center;
-  }
-  #phrase_td {
-    display: none;
-  }
-}
-@media all and (max-width: 500px) {
-  #user_td {
-    display: none;
   }
 }

@@ -8,7 +8,7 @@ class ExamplesController < ApplicationController
     else
       flash[:danger] = @example.errors.full_messages.to_sentence
     end
-    redirect_to phrase_path(phrase)
+    redirect_back fallback_location: phrase_path(phrase)
   end
 
   def destroy

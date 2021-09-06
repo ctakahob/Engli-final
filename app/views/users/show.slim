@@ -20,15 +20,15 @@
         | Id
       th
         | Phrase
-      th
+      th  
         | Translation
       th
         | Category
         
-      th
+      th id="user_td"
         | Actions
       
-      th 
+      th id="user_td"
         | Votes
       - @phrases.each do |phrase|
         = render phrase, author: false, render_in_phrase: false
