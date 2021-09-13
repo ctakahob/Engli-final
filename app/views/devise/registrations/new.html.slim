@@ -1,28 +1,31 @@
 br
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="258px" height="161px" viewBox="-0.5 -0.5 258 161" content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2021-09-01T12:36:26.012Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36&quot; etag=&quot;TZN-O_XdcIMgsO7TAyMU&quot; version=&quot;14.9.8&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;CxkvSeiwteKzxavNmoq5&quot; name=&quot;Page-1&quot;&gt;rVVdb5swFP01PLYKJnHIY6FJNintpGXSpL0Z7IBVg6ljFrJfv2tsvkKntdryEC7nfti+51zjBXHR7BWp8idJmfDQgjZe8OghtF768G+AqwUwxhbIFKcWWgzAkf9iFvQ7tOaUnR1mIS2l0LyagqksS5bqCUaUkpdp2EkKOgEqkrEZcEyJmKPfOdW5RUO0HvBPjGd5t7KPN9ZTkC7YneScEyovIyjYekGspNTWKpqYCdO7aV92f/D2G1Os1O9JqF6/LA7bUPAf24X+lqHwmW3uXJWfRNTuwB7CAupFJwllYdf66lqBX2vZOe7OLVEPEIBx1QzOlgkh1STDQ8Gp/Y0hnLlnu1pyC/A3154X2D7vuxQ4Or8tA9isNGD2cB2MJmuhS841O1YkNe8XUDUE5boQ8OaDCTxWxlM0mVH8fULOPL1Xsi7pV1BgTISQtSnczkCwMJYRv78yyVbgxkxMBqOHpCtsNrUjBRcmOpYFT2FfR1Ke4fF0hABBEiYikr5k7Wqxa3QpS2bSuRBx3/sAxTjabfrzjXXSkc6UZs0IcrrZM1kwra4Q4rwoXNkUN8T+xg3xZRiJXvj5eBywEz9xY5j1tQelguHE+gHhon8W7tqfCteq4fD5vTKB3umpMojgWQl2Cp1mQENkOszhLnlwjoJTatIjxWAfJGlLGYFUkpe6bdEq8laPplatpRNLKzqt5Au7ZfxvgvkP1C9Xywn1aDmnPgznzHf3/geIh9fhNmx9o09KsP0N&lt;/diagram&gt;&lt;/mxfile&gt;"><defs/><g><path d="M 22.5 145 L 5 145 C 2.24 145 0 142.76 0 140 L 0 5 C 0 2.24 2.24 0 5 0 L 164 0 C 166.76 0 169 2.24 169 5 L 169 140 C 169 142.76 166.76 145 164 145 L 37.5 145 C 34.54 152.77 25.79 158.6 15 160 C 18.89 157.15 21.68 151.57 22.5 145 Z" fill="#2c6bf9" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 167px; height: 1px; padding-top: 73px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Comic Sans MS; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="font-size: 66px" color="#ffffff"><b><i>ENG</i></b></font></div></div></div></foreignObject><text x="85" y="76" fill="#000000" font-family="Comic Sans MS" font-size="12px" text-anchor="middle">ENG</text></switch></g><rect x="169" y="50" width="88" height="41" fill="none" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 71px; margin-left: 213px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Comic Sans MS; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; "><font style="font-size: 71px">LI</font></div></div></div></foreignObject><text x="213" y="74" fill="#000000" font-family="Comic Sans MS" font-size="12px" text-anchor="middle">LI</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/></switch></svg>
-h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .form-group
-    = f.label :email
-    br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-  .form-group
-    = f.label :username
-    br/
-    = f.text_field :username, autofocus: true, class: 'form-control'
-  .form-group
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (#{@minimum_password_length} characters minimum)
-    br/
-    = f.password_field :password, autocomplete: "new-password", class: 'form-control'
-  .form-group
-    = f.label :password_confirmation
-    br/
-    = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
-  .actions
-    = f.submit "Sign up" , class: 'btn btn-primary w-100'
+
+.container style="max-width: 50%"
+  h2.text-center Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .form-group
+      = f.label :email
+      br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+    .form-group
+      = f.label :username
+      br/
+      = f.text_field :username, autofocus: true, class: 'form-control'
+    .form-group
+      = f.label :password
+      - if @minimum_password_length
+        em
+          | (#{@minimum_password_length} characters minimum)
+      br/
+      = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+    .form-group
+      = f.label :password_confirmation
+      br/
+      = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+    .actions
+      = f.submit "Sign up" , class: 'btn btn-primary w-100'
 br
-= render "devise/shared/links"
+.text-center
+  = render "devise/shared/links"
