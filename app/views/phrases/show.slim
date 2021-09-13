@@ -2,7 +2,8 @@
   br
   .card-title.ms-5.text-start
       p Phrase: <b>#{@phrase.phrase}</b>, Translation: <b>#{@phrase.translation}</b>, Category: <b>#{@phrase.category}</b>
-      p Created: <b>#{formatted_time(@phrase.created_at)}</b>, Author: <b>#{@phrase.user.username}</b>
+      div id="user_td"
+        p   Created: <b>#{formatted_time(@phrase.created_at)}</b>, Author: <b>#{@phrase.user.username}</b>
 
   br
   h3.text-center Examples:  
@@ -23,7 +24,7 @@
         | Author 
       th id="example_td"
         | Created At
-      th id="example_td"
+      th 
         | Action
       th Votes
 

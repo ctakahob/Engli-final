@@ -1,14 +1,14 @@
-tr
+tr.text-center
   td id="phrase_td"
     br = link_to phrase.id, phrase_path(phrase) ,class: ["link-dark"], style: [" text-decoration:none"]
   td 
     br = link_to phrase.phrase, phrase_path(phrase) ,class: ["link-dark"] , style: [" text-decoration:none"]
   td
     br = link_to phrase.translation, phrase_path(phrase) ,class: ["link-dark"] , style: [" text-decoration:none"]
-  td
+  td id="phrase_td"
     br = link_to phrase.category, phrase_path(phrase) ,class: ["link-dark"] , style: [" text-decoration:none"], id: ["phrase_path"]
 
-  td id="phrase_td"
+  td 
     br
     - if phrase.author? current_user
       = link_to 'Edit', edit_phrase_path(phrase), class: ["link-warning"]
